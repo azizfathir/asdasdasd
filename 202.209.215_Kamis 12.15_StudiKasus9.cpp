@@ -33,14 +33,14 @@ public:
     }
 
     void tampilkanNilai() {
-        cout << "\n+==============================================================+" << endl;
-        cout << "| No\t| NIM\t|Mapel 1 | Mapel 2 | Mapel 3 |  Rata-rata |" << endl;
-        cout << "+==============================================================+" << endl;
+        cout << "+----------------------------------------------------------+" << endl;
+        cout << "| No\t| NIM\t|Mapel 1 | Mapel 2 | Mapel 3 | Rata-rata  |" << endl;
+        cout << "+----------------------------------------------------------+" << endl;
         for (int i = 0; i < n; i++) {
             float rata = (siswa[i].mapel1 + siswa[i].mapel2 + siswa[i].mapel3) / 3.0;
             cout << "| " << i + 1 << "\t| " << siswa[i].nim << "\t| " << siswa[i].mapel1 << "\t | " << siswa[i].mapel2 << "\t   | " << siswa[i].mapel3 << "\t     | " << rata << "\t  |" << endl;
         }
-        cout << "+==============================================================+\n" << endl;
+        cout << "+----------------------------------------------------------+\n" << endl;
     }
 
     void sortingAscending() {
@@ -56,7 +56,7 @@ public:
                 }
             }
         }
-        cout << "\nData berhasil diurutkan secara ASCENDING berdasarkan rata-rata.\n";
+        cout << "\nRata-rata siswa (Ascending): \n";
     }
 
     void sortingDescending() {
@@ -72,7 +72,7 @@ public:
                 }
             }
         }
-        cout << "\nData berhasil diurutkan secara DESCENDING berdasarkan rata-rata.\n";
+        cout << "\nRata-rata siswa (Descending): \n";
     }
 };
 
@@ -84,8 +84,8 @@ int main() {
         cout << "\n========== MENU ==========\n";
         cout << "1. Input Nilai Siswa\n";
         cout << "2. Tampilkan Nilai dan Rata-rata\n";
-        cout << "3. Sorting rata-rata secara ascending\n";
-        cout << "4. Sorting rata-rata secara descending\n";
+        cout << "3. Sorting Rata-rata (Ascending)\n";
+        cout << "4. Sorting Rata-rata (Descending)\n";
         cout << "5. Keluar\n";
         cout << "Pilih menu: ";
         cin >> pilihan;
