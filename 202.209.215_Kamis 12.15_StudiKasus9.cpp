@@ -43,37 +43,48 @@ public:
         cout << "+----------------------------------------------------------+\n" << endl;
     }
 
-    void sortingAscending() {
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                float rata1 = (siswa[j].mapel1 + siswa[j].mapel2 + siswa[j].mapel3) / 3.0;
-                float rata2 = (siswa[j + 1].mapel1 + siswa[j + 1].mapel2 + siswa[j + 1].mapel3) / 3.0;
+void sortingAscending() {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            float rata1 = (siswa[j].mapel1 + siswa[j].mapel2 + siswa[j].mapel3) / 3.0;
+            float rata2 = (siswa[j + 1].mapel1 + siswa[j + 1].mapel2 + siswa[j + 1].mapel3) / 3.0;
 
-                if (rata1 > rata2) {
-                    Siswa temp = siswa[j];
-                    siswa[j] = siswa[j + 1];
-                    siswa[j + 1] = temp;
-                }
+            if (rata1 > rata2) {
+                Siswa temp = siswa[j];
+                siswa[j] = siswa[j + 1];
+                siswa[j + 1] = temp;
             }
         }
-        cout << "\nRata-rata siswa (Ascending): \n";
+	}	
+      	cout << "\nRata-rata siswa (Ascending): ";
+    for (int i = 0; i < n; i++) {
+        float rata = (siswa[i].mapel1 + siswa[i].mapel2 + siswa[i].mapel3) / 3.0;
+        cout << rata << " |";
     }
+    cout << endl;
+}
 
-    void sortingDescending() {
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                float rata1 = (siswa[j].mapel1 + siswa[j].mapel2 + siswa[j].mapel3) / 3.0;
-                float rata2 = (siswa[j + 1].mapel1 + siswa[j + 1].mapel2 + siswa[j + 1].mapel3) / 3.0;
+void sortingDescending() {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            float rata1 = (siswa[j].mapel1 + siswa[j].mapel2 + siswa[j].mapel3) / 3.0;
+            float rata2 = (siswa[j + 1].mapel1 + siswa[j + 1].mapel2 + siswa[j + 1].mapel3) / 3.0;
 
-                if (rata1 < rata2) {
-                    Siswa temp = siswa[j];
-                    siswa[j] = siswa[j + 1];
-                    siswa[j + 1] = temp;
-                }
+            if (rata1 < rata2) {
+                Siswa temp = siswa[j];
+                siswa[j] = siswa[j + 1];
+                siswa[j + 1] = temp;
             }
         }
-        cout << "\nRata-rata siswa (Descending): \n";
     }
+    		cout << "\nRata-rata siswa (Descending): ";
+    for (int i = 0; i < n; i++) {
+        float rata = (siswa[i].mapel1 + siswa[i].mapel2 + siswa[i].mapel3) / 3.0;
+        cout << rata << " |";
+    }
+    cout << endl;
+}
+
 };
 
 int main() {
@@ -99,11 +110,9 @@ int main() {
             break;
         case 3:
             u.sortingAscending();
-            u.tampilkanNilai();
             break;
         case 4:
             u.sortingDescending();
-            u.tampilkanNilai();
             break;
         case 5:
             cout << "Terima kasih!\n";
